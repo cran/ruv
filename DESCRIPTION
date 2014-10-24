@@ -1,0 +1,14 @@
+Package: ruv
+Title: Detect and Remove Unwanted Variation using Negative Controls
+Description: The algorithms in this package attempt to adjust for systematic errors of unknown origin in high-dimensional data.  The algorithms were originally developed for use with genomic data, especially microarray data, but may be useful with other types of high-dimensional data as well.  The algorithms included in this package are RUV-2, RUV-4, RUV-inv, and RUV-rinv, along with various supporting algorithms.  These algorithms were proposed by Gagnon-Bartsch and Speed (2012), and by Gagnon-Bartsch, Jacob and Speed (2013).  The algorithms require the user to specifiy a set of negative control variables, as described in the references. 
+Version: 0.9.4
+Date: 2014-10-24
+Author: Johann Gagnon-Bartsch <johann@stat.berkeley.edu> 
+Maintainer: Johann Gagnon-Bartsch <johann@stat.berkeley.edu>
+License: GPL
+URL: http://www.stat.berkeley.edu/~johann/ruv
+LazyLoad: yes
+Packaged: 2014-10-24 09:52:13 UTC; johann
+NeedsCompilation: yes
+Repository: CRAN
+Date/Publication: 2014-10-24 13:55:18

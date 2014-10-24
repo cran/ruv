@@ -1,0 +1,17 @@
+useDynLib(ruv)
+
+export(
+get_empirical_variances,
+getK,
+inputcheck1,
+invvar,
+randinvvar,
+residop,
+RUV1,
+RUV2,
+RUV4,
+RUVinv,
+RUVrinv,
+sigmashrink,
+variance_adjust
+)
