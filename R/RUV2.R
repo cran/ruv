@@ -1,5 +1,6 @@
 RUV2 <-
-function (Y, X, ctl, k, Z = 1, eta = NULL, fullW = NULL, inputcheck = TRUE) 
+function (Y, X, ctl, k, Z = 1, eta = NULL, fullW = NULL, inputcheck = TRUE, 
+    do_projectionplot = TRUE) 
 {
     if (inputcheck) 
         inputcheck1(Y, X, Z, ctl)
@@ -30,23 +31,36 @@ function (Y, X, ctl, k, Z = 1, eta = NULL, fullW = NULL, inputcheck = TRUE)
     if (k > 0) {
         W = fullW[, 1:k, drop = FALSE]
         XZW = cbind(X, Z, W)
-        W0 = residop(W, X)
-        W0 = svd(W0)$u
-        Y0 = residop(Y, X)
-        alpha = solve(t(W0) %*% W0) %*% t(W0) %*% Y0
-        byx = solve(t(X) %*% X) %*% t(X) %*% Y
-        A = t(t(W0) %*% W)
-        B = t(solve(t(X) %*% X) %*% t(X) %*% W)
-        bwx = t(solve(t(A) %*% A) %*% t(A) %*% B)
+        if (do_projectionplot) {
+            W0 = residop(W, X)
+            bwx = solve(t(X) %*% X) %*% t(X) %*% W
+            temp = svd(W0)
+            vd = t((1/temp$d) * t(temp$v))
+            W0 = W0 %*% vd
+            bwx = bwx %*% vd
+            W0Y = t(W0) %*% Y
+            u = svd(W0Y %*% t(W0Y))$u
+            W0 = W0 %*% u
+            bwx = bwx %*% u
+            projectionplotalpha = t(W0) %*% Y
+            byx = solve(t(X) %*% X) %*% t(X) %*% Y
+            projectionplotW = W0 + X %*% bwx
+        }
+        else {
+            byx = bwx = projectionplotalpha = projectionplotW = NULL
+        }
     }
     else {
         XZW = cbind(X, Z)
-        W = alpha = byx = bwx = NULL
+        W = alpha = byx = bwx = projectionplotW = projectionplotalpha = NULL
     }
     A = solve(t(XZW) %*% XZW)
     betagammaalphahat = A %*% t(XZW) %*% Y
     resids = Y - XZW %*% betagammaalphahat
     betahat = betagammaalphahat[1:p, , drop = FALSE]
+    if (k > 0) 
+        alpha = betagammaalphahat[(p + q + 1):(p + q + k), , 
+            drop = FALSE]
     multiplier = as.matrix(diag(A)[1:p])
     df = m - p - q - k
     sigma2 = apply(resids^2, 2, sum)/df
@@ -59,5 +73,5 @@ function (Y, X, ctl, k, Z = 1, eta = NULL, fullW = NULL, inputcheck = TRUE)
     return(list(betahat = betahat, sigma2 = sigma2, t = tvals, 
         p = pvals, multiplier = multiplier, df = df, W = W, alpha = alpha, 
         byx = byx, bwx = bwx, X = X, k = k, ctl = ctl, Z = Z, 
-        fullW = fullW))
+        fullW = fullW, projectionplotW = projectionplotW, projectionplotalpha = projectionplotalpha))
 }

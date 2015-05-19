@@ -1,7 +1,7 @@
-1e38dc28bcb49b1f48640671223fe283 *DESCRIPTION
+64bae9ef64177da8f4c6dccdae40aeb3 *DESCRIPTION
 967d328d4a26c8cdd776aa8f45674599 *NAMESPACE
 b16c41ed9f75ec5777e126117344e16e *R/RUV1.R
-178ba12ca90dc3eb35123fed2ed1157a *R/RUV2.R
+fa46672f67a446648306d7a06e890b52 *R/RUV2.R
 88b6504a94f94d144d3003cc75448d08 *R/RUV4.R
 eb2edafff702e874f18d67c690dd728d *R/RUVinv.R
 5391118f4a8bac58365255fa54df8fd2 *R/RUVrinv.R
@@ -10,14 +10,14 @@ eb2edafff702e874f18d67c690dd728d *R/RUVinv.R
 9d1e6a5eb5f200221d97d1176e3fd978 *R/get_empirical_variances.R
 06eb5d7f37e27a7dba8819404aab2a92 *R/getsizeratios.R
 46d66895f1005c5bfeda52bf3823b47a *R/inputcheck1.R
-1e8136f54bbdb63bb1c8277d079fd69c *R/invvar.R
+6d9a3bb17c5afd91910fa099c7f6dbfa *R/invvar.R
 f33a11ccc69d053edc26e8cb345daddc *R/momentintegral.R
 5aa83710657f83ff464787febf69f05b *R/randinvvar.R
 4638e04150f0f58460cb9b6c6a38445f *R/residop.R
 17b53a5b05b4fc356c5ff1763a437a42 *R/sigmashrink.R
 dd2f06f9486f13ccdb9b077de2c38533 *R/variance_adjust.R
 b66e8095455adb9c9ff1b901fd3da364 *man/RUV1.Rd
-2c9635588f601ee45f59248bc9b04e12 *man/RUV2.Rd
+f73227e8d72f5ae5915281c5a62b62e9 *man/RUV2.Rd
 89db92bc6969ad2d285a6ffa6a4a409b *man/RUV4.Rd
 b89370c5cb493cdc4f4629598c416c10 *man/RUVinv.Rd
 d43d0388b8678da62169a1f45b907b19 *man/RUVrinv.Rd
@@ -27,7 +27,7 @@ d9a81c4819f43cfba9da91eebd068cf4 *man/get_empirical_variances.Rd
 eb3c663e2b63aef3f72158e462c67cba *man/invvar.Rd
 d35fca9e91bfaf21402188a43bcca797 *man/randinvvar.Rd
 241b479eecfe58589eb7b1676e1cb558 *man/residop.Rd
-65e65350737979411871f521f5efee85 *man/ruv-package.Rd
+0afbf0ff8095538012d6d208cd039cca *man/ruv-package.Rd
 30b3309e5577546b286b9bb543a8b2f8 *man/sigmashrink.Rd
 38ecc1733c219da79388d28a56872ecf *man/variance_adjust.Rd
 c8108e70b65536778fac107ddf1ffbe0 *src/getsizeratios.c

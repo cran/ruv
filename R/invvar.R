@@ -23,7 +23,13 @@ function (Y, ctl, XZ = NULL, eta = NULL, lambda = NULL, invsvd = NULL)
         else temp = Y
         invsvd = svd(temp[, ctl] %*% t(temp[, ctl]))
     }
-    Y0 = t(invsvd$u[, 1:k, drop = FALSE]) %*% Y
+    if ((k > sum(ctl)) & (pq > 0)) {
+        U1 = invsvd$u[, 1:sum(ctl), drop = FALSE]
+        U2 = svd(residop(diag(m), cbind(XZ, U1)))$u[, 1:(m - 
+            pq - sum(ctl)), drop = FALSE]
+        Y0 = t(cbind(U1, U2)) %*% Y
+    }
+    else Y0 = t(invsvd$u[, 1:k, drop = FALSE]) %*% Y
     Y0cd = sqrt(invsvd$d[1:k])
     if (is.null(lambda)) 
         lambda = 0

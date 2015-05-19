@@ -11,7 +11,7 @@ The RUV-2 algorithm.  Estimates and adjusts for unwanted variation using negativ
 
 \usage{
 RUV2(Y, X, ctl, k, Z = 1, eta = NULL, fullW = NULL,
-     inputcheck = TRUE)
+     inputcheck = TRUE, do_projectionplot = TRUE)
 }
 
 \arguments{
@@ -39,6 +39,9 @@ RUV2(Y, X, ctl, k, Z = 1, eta = NULL, fullW = NULL,
   \item{inputcheck}{
      Perform a basic sanity check on the inputs, and issue a warning if there is a problem.
 }
+  \item{do_projectionplot}{
+     Calculate the quantities necessary to generate a projection plot.
+}
 }
 
 \details{
@@ -62,6 +65,8 @@ A list containing
   \item{ctl}{\code{ctl}.  Included for reference.}
   \item{Z}{\code{Z}.  Included for reference.}
   \item{fullW}{Can be used to speed up future calls of RUV2.}
+  \item{projectionplotW}{A reparameterization of W useful for projection plots.}
+  \item{projectionplotalpha}{A reparameterization of alpha useful for projection plots.}
 }
 
 \note{
