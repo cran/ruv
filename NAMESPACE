@@ -1,5 +1,7 @@
 useDynLib(ruv)
 
+importFrom("stats", "median", "p.adjust", "pt", "rnorm")   
+
 export(
 get_empirical_variances,
 getK,

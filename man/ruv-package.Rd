@@ -15,8 +15,8 @@ Implements the 'RUV' (Remove Unwanted Variation) algorithms.  These algorithms a
 \tabular{ll}{
 Package: \tab ruv\cr
 Type: \tab Package\cr
-Version: \tab 0.9.5\cr
-Date: \tab 2015-05-19\cr
+Version: \tab 0.9.6\cr
+Date: \tab 2015-07-17\cr
 License: \tab GPL\cr
 LazyLoad: \tab yes\cr
 URL: \tab \href{http://www.stat.berkeley.edu/~johann/ruv}{http://www.stat.berkeley.edu/~johann/ruv} \cr
@@ -33,7 +33,7 @@ URL: \tab \href{http://www.stat.berkeley.edu/~johann/ruv}{http://www.stat.berkel
 
 
 \author{ 
-  Johann Gagnon-Bartsch <johann@stat.berkeley.edu> 
+  Johann Gagnon-Bartsch <johanngb@umich.edu> 
 } 
  
 \references{ 

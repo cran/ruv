@@ -47,7 +47,7 @@ Removing Unwanted Variation from High Dimensional Data with Negative Controls.  
 }
 
 \author{
-Johann Gagnon-Bartsch \email{johann@stat.berkeley.edu}
+Johann Gagnon-Bartsch \email{johanngb@umich.edu}
 }
 
 \seealso{
