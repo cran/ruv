@@ -1,29 +1,29 @@
 RUV4 <-
-function (Y, X, ctl, k, Z = 1, eta = NULL, fullW0 = NULL, inputcheck = TRUE) 
+function (Y, X, ctl, k, Z = 1, eta = NULL, include.intercept = TRUE, 
+    fullW0 = NULL, inputcheck = TRUE) 
 {
-    if (inputcheck) 
-        inputcheck1(Y, X, Z, ctl)
-    Y = RUV1(Y, eta, ctl)
+    if (is.data.frame(Y)) 
+        Y = data.matrix(Y)
     m = nrow(Y)
     n = ncol(Y)
+    X = rX = design.matrix(X, include.intercept = FALSE)
     p = ncol(X)
-    if (is.null(Z)) {
-        q = 0
-    }
-    else if (length(Z) == 1) {
-        if (Z == 1) {
+    if (is.numeric(Z)) 
+        if (length(Z) == 1) 
             Z = matrix(1, m, 1)
-            q = 1
-        }
-    }
-    else {
+    if (!is.null(Z)) {
+        Z = design.matrix(Z, name = "Z", include.intercept = include.intercept)
         q = ncol(Z)
     }
+    else q = 0
+    ctl = tological(ctl, n)
+    if (inputcheck) 
+        inputcheck1(Y, X, Z, ctl)
+    Y = RUV1(Y, eta, ctl, include.intercept = include.intercept)
     if (q > 0) {
         Y = residop(Y, Z)
         X = residop(X, Z)
     }
-    Yc = Y[, ctl]
     Y0 = residop(Y, X)
     if (is.null(fullW0)) {
         fullW0 = svd(Y0 %*% t(Y0))$u[, 1:(m - p - q), drop = FALSE]
@@ -43,7 +43,8 @@ function (Y, X, ctl, k, Z = 1, eta = NULL, fullW0 = NULL, inputcheck = TRUE)
         W = alpha = byx = bwx = NULL
     }
     A = solve(t(XZW) %*% XZW)
-    betagammaalphahat = A %*% t(XZW) %*% Y
+    AXZW = A %*% t(XZW)
+    betagammaalphahat = AXZW %*% Y
     resids = Y - XZW %*% betagammaalphahat
     betahat = betagammaalphahat[1:p, , drop = FALSE]
     multiplier = as.matrix(diag(A)[1:p])
@@ -55,8 +56,12 @@ function (Y, X, ctl, k, Z = 1, eta = NULL, fullW0 = NULL, inputcheck = TRUE)
     pvals = tvals
     for (i in 1:nrow(pvals)) pvals[i, ] = 2 * pt(-abs(tvals[i, 
         ]), df)
+    Fstats = apply(betahat * (solve(AXZW[1:p, , drop = FALSE] %*% 
+        t(AXZW[1:p, , drop = FALSE])) %*% betahat), 2, sum)/p/sigma2
+    Fpvals = pf(Fstats, p, df, lower.tail = FALSE)
     return(list(betahat = betahat, sigma2 = sigma2, t = tvals, 
-        p = pvals, multiplier = multiplier, df = df, W = W, alpha = alpha, 
-        byx = byx, bwx = bwx, X = X, k = k, ctl = ctl, Z = Z, 
-        fullW0 = fullW0))
+        p = pvals, Fstats = Fstats, Fpvals = Fpvals, multiplier = multiplier, 
+        df = df, W = W, alpha = alpha, byx = byx, bwx = bwx, 
+        X = rX, k = k, ctl = ctl, Z = Z, eta = eta, fullW0 = fullW0, 
+        include.intercept = include.intercept, method = "RUV4"))
 }

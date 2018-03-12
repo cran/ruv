@@ -6,9 +6,10 @@ function (Y, ctl, XZ = NULL, eta = NULL, lambda = NULL, iterN = 1e+05)
         X = X/sqrt(sum(X^2))
         return(X)
     }
-    Y = RUV1(Y, eta, ctl)
     m = nrow(Y)
     n = ncol(Y)
+    ctl = tological(ctl, n)
+    Y = RUV1(Y, eta, ctl)
     if (is.null(XZ)) {
         pq = 0
     }

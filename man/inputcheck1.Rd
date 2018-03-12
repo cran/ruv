@@ -10,7 +10,7 @@ Performs a basic sanity check on the arguments passed to RUV-2, RUV-4, RUV-inv, 
 }
 
 \usage{
-inputcheck1(Y, X, Z, ctl)
+inputcheck1(Y, X, Z, ctl, check.na=TRUE)
 }
 
 \arguments{
@@ -25,6 +25,9 @@ inputcheck1(Y, X, Z, ctl)
 }
   \item{ctl}{
      The negative controls.  A logical vector of length n.  
+}
+  \item{check.na}{
+     Whether to check for missing values.
 }
 }
 

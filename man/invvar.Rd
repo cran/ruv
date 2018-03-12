@@ -25,7 +25,7 @@ invvar(Y, ctl, XZ = NULL, eta = NULL, lambda = NULL,
      A m by (p + q) matrix containing both the factor(s) of interest (X) and known covariates (Z).
 }
   \item{eta}{
-     Gene-wise (as oposed to sample-wise) covariates.  These covariates are adjusted for by RUV-1 before any further analysis proceeds.  A matrix with n columns.
+     Gene-wise (as opposed to sample-wise) covariates.  These covariates are adjusted for by RUV-1 before any further analysis proceeds.  A matrix with n columns.
 }
   \item{lambda}{
      Ridge parameter.  If specified, the ridged inverse method will be used.

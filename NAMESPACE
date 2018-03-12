@@ -1,19 +1,46 @@
 useDynLib(ruv)
 
-importFrom("stats", "median", "p.adjust", "pt", "rnorm")   
+import(ggplot2, scales, gridExtra)
+
+importFrom("stats", "cancor", "ecdf", "median", "model.matrix", "p.adjust", "pf", "pt", "quantile", "rnorm", "sd")   
+
+importFrom("utils", "read.csv")
 
 export(
+collapse.replicates,
+design.matrix,
 get_empirical_variances,
 getK,
+google_search,
 inputcheck1,
 invvar,
+projectionplotvariables,
 randinvvar,
+replicate.matrix,
 residop,
 RUV1,
 RUV2,
 RUV4,
+RUVI,
+RUVIII,
 RUVinv,
 RUVrinv,
+ruv_cancorplot,
+ruv_ecdf,
+ruv_hist,
+ruv_projectionplot,
+ruv_rankplot,
+ruv_residuals,
+ruv_rle,
+ruv_scree,
+ruv_shiny,
+ruv_summary,
+ruv_svdgridplot,
+ruv_svdplot,
+ruv_varianceplot,
+ruv_volcano,
 sigmashrink,
 variance_adjust
 )
+
+

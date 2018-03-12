@@ -1,15 +1,16 @@
 Package: ruv
 Title: Detect and Remove Unwanted Variation using Negative Controls
-Description: Implements the 'RUV' (Remove Unwanted Variation) algorithms.  These algorithms attempt to adjust for systematic errors of unknown origin in high-dimensional data.  The algorithms were originally developed for use with genomic data, especially microarray data, but may be useful with other types of high-dimensional data as well.  These algorithms were proposed by Gagnon-Bartsch and Speed (2012), and by Gagnon-Bartsch, Jacob and Speed (2013).  The algorithms require the user to specify a set of negative control variables, as described in the references.  The algorithms included in this package are 'RUV-2', 'RUV-4', 'RUV-inv', and 'RUV-rinv', along with various supporting algorithms.  
-Version: 0.9.6
-Date: 2015-07-17
-Imports: stats
+Description: Implements the 'RUV' (Remove Unwanted Variation) algorithms.  These algorithms attempt to adjust for systematic errors of unknown origin in high-dimensional data.  The algorithms were originally developed for use with genomic data, especially microarray data, but may be useful with other types of high-dimensional data as well.  These algorithms were proposed by Gagnon-Bartsch and Speed (2012), and by Gagnon-Bartsch, Jacob and Speed (2013).  The algorithms require the user to specify a set of negative control variables, as described in the references.  The algorithms included in this package are 'RUV-2', 'RUV-4', 'RUV-inv', 'RUV-rinv', 'RUV-I', and RUV-III', along with various supporting algorithms.  
+Version: 0.9.7
+Date: 2018-03-12
+Imports: stats, ggplot2, scales, gridExtra
+Suggests: shiny, colourpicker
 Author: Johann Gagnon-Bartsch <johanngb@umich.edu> 
 Maintainer: Johann Gagnon-Bartsch <johanngb@umich.edu>
 License: GPL
-URL: http://www.stat.berkeley.edu/~johann/ruv
+URL: http://www-personal.umich.edu/~johanngb/ruv/
 LazyLoad: yes
-Packaged: 2015-07-18 00:58:25 UTC; johann
 NeedsCompilation: yes
+Packaged: 2018-03-12 16:46:57 UTC; johann
 Repository: CRAN
-Date/Publication: 2015-07-18 17:00:34
+Date/Publication: 2018-03-12 19:19:17 UTC
