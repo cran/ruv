@@ -15,8 +15,8 @@ function (Y, rowinfo = NULL, probs = c(0.05, 0.25, 0.5, 0.75,
         }
         rleplot = ggplot(df, aes_string(x = "rle.x.factor")) + 
             geom_boxplot(aes_string(lower = "lower", middle = "middle", 
-                upper = "upper", max = "max", min = "min"), stat = "identity") + 
-            theme_bw() + theme(axis.title.x = element_blank(), 
+                upper = "upper", max = "max", min = "min", group = "rle.x.factor"), 
+                stat = "identity") + theme_bw() + theme(axis.title.x = element_blank(), 
             axis.text.x = element_blank(), axis.ticks.x = element_blank()) + 
             theme(axis.title.y = element_blank(), axis.text.y = element_text(size = rel(1.5))) + 
             geom_hline(yintercept = 0) + coord_cartesian(ylim = ylim)

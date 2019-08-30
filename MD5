@@ -1,4 +1,4 @@
-9f186971bfca796011ad592704277959 *DESCRIPTION
+7f1aa1a9f74e09b1f8c886391adad60e *DESCRIPTION
 238d9a123c21aa279c9e250c0483e0fd *NAMESPACE
 48c891bee1616b317b3a3781a516900e *R/RUV1.R
 24e97b882bd27710c5c0a7295c27111e *R/RUV2.R
@@ -36,7 +36,7 @@ b03cb7d1a6dbb7165512314616c6f449 *R/residop.R
 28443c1a6a4ec9d0d6a00e64a34c8c29 *R/ruv_projectionplot.R
 08424c3448417aff78d97e8729d2f289 *R/ruv_rankplot.R
 ededb0e9d28204184c5095972553a227 *R/ruv_residuals.R
-1acf982ce207eacb235f9401c72fa514 *R/ruv_rle.R
+da6e0de2f8b3808c26dbf12496cd7e1a *R/ruv_rle.R
 85530182a4109abc504388638a9a63d8 *R/ruv_scree.R
 322949975c45f5bdab515ee7b79a94eb *R/ruv_shiny.R
 94453044a935fee47ed6054a96484908 *R/ruv_summary.R
@@ -64,7 +64,7 @@ b68fad08b63d1a5b7c465d5da052dbb7 *man/projectionplotvariables.Rd
 ebb9daa88015df54685c29ff3d3b6db8 *man/randinvvar.Rd
 434602d0aba44cd013de03c2fc1ca1a6 *man/replicate.matrix.Rd
 241b479eecfe58589eb7b1676e1cb558 *man/residop.Rd
-3c22924b6704c4cdc84fef0a40ec0c2c *man/ruv-package.Rd
+8c51851454a3c1c9d54ab2ddd6d53c74 *man/ruv-package.Rd
 57dd50eb4a7e91b0606768ed3aa84476 *man/ruv_cancorplot.Rd
 e031fdfe255fe11cc619eea65294ba42 *man/ruv_ecdf.Rd
 12ca8f832b6b8903f90cd279529194d1 *man/ruv_hist.Rd
